@@ -1,0 +1,24 @@
+{
+  "name": "navmap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "request": "^2.81.0",
+    "ejs": "^2.6.0",
+    "request-promise": "^1.0.1",
+    "sync-disk-cache": "^1.3.2"
+  }
+}

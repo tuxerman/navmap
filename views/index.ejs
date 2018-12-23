@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Navmap</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- <link href="css/normalize.css" rel="stylesheet"> -->
+  <link href="css/skeleton.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/plotter.js"></script>
+  <script>
+    $(document).ready(function() {
+      Plotter.init( <%- JSON.stringify(routedata) %>);
+    });
+  </script>
+</head>
+
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+
+    <div class="row">
+        <div class="twelve columns main-header">
+            <h2 class="main-heading">Navmap</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <form action="/route" method="POST" id="routes-between-apts-form">
+          <div class="five columns">
+            <input class="u-full-width" type="text" value="" placeholder= "KSFO" name="srcApt" id="src-apt-txt">
+          </div>
+          <div class="five columns">
+            <input class="u-full-width" type="text" value="" placeholder= "KDEN" name="destApt" id="dest-apt-txt">
+          </div>
+          <div class="two columns">
+            <input class="button-primary u-full-width" type="submit" value="Plot" id="plot-btn">
+          </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <input class="u-full-width" type="text" placeholder= "Simple route will appear here" id="simple-route-txt" readonly>
+    </div>
+
+  </div>
+
+  <div class="container">
+
+    <div class="row">
+      <div class="twelve columns">
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=Plotter.initMap" async defer></script>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- End Document
+  ––––––––––––––––––––––––––––––––––––––––––––––––––
+</body>
+
+</html>
