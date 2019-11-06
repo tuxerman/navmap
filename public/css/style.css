@@ -4,8 +4,26 @@
   height: 600px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 15px;
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
+}
+
+.footer {
+    margin-top: 20px;
+}
+
+.full-width-background {
+    background-color: #EEEEEE;
+}
+
+h6::before {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 50px;
+  height: 10px;
+  background-color: red;
 }

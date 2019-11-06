@@ -61,21 +61,34 @@
         </form>
     </div>
 
-    <div class="row">
-        <input class="u-full-width" type="text" placeholder= "Simple route will appear here" id="simple-route-txt" readonly>
-    </div>
-
-  </div>
-
-  <div class="container">
-
-    <div class="row">
-      <div class="twelve columns">
-        <div id="map"></div>
-        <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=Plotter.initMap" async defer></script>
+    <div class="show-once-plotted" id="flightplan-info" hidden>
+      <hr>
+      <div class="row">
+          <h4>Flight plan</h4>
+      </div>
+      <div class="row">
+          <h5>Filed route</h5>
+          <input class="u-full-width" type="text" placeholder= "Simple route will appear here" id="simple-route-txt" readonly>
       </div>
     </div>
-  </div>
+
+    <div class="row">
+      <h5>Full route</h5>
+      <div class="twelve columns">
+        <div id="map"></div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=API_KEY&callback=Plotter.initMap" async defer></script>
+      </div>
+    </div>
+
+  </div>  <!-- End main container -->
+
+    <div class="footer">
+      <div class="container">
+          <div class="twelve columns">
+            <p> </p>
+          </div>
+      </div>
+    </div>
 
 
   <!-- End Document

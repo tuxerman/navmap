@@ -1,7 +1,7 @@
 const request = require("request-promise");
 
-const flightAwareUserName = "USERNAME";
-const flightAwareApiKey = "API_KEY";
+const flightAwareUserName = "flightAwareUserName";
+const flightAwareApiKey = "flightAwareApiKey";
 
 const fxmlUrl = "http://flightxml.flightaware.com/json/FlightXML2/";
 const fxmlRoutesAptUrl = "http://flightxml.flightaware.com/json/FlightXML2/RoutesBetweenAirports";

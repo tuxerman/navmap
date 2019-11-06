@@ -44,26 +44,12 @@ var dummyRouteData = {
 
 // HOME PAGE
 app.get("/", function(req, res) {
-    res.render("index", {
-        routedata: {
-            src_airport: "",
-            dest_airport: "",
-            simple_route: "",
-            all_wpts: []
-        }
-    });
+    res.render("index", emptyRouteData);
 });
 
 // APT ROUTE
 app.get("/route", function(req, res) {
-    res.render("index", {
-        routedata: {
-            src_airport: "",
-            dest_airport: "",
-            simple_route: "",
-            all_wpts: []
-        }
-    });
+    res.render("index", emptyRouteData);
 });
 
 app.post("/route", function(req, res) {

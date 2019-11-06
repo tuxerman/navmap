@@ -36,6 +36,22 @@ Plotter = (function() {
                     animation: google.maps.Animation.DROP,
                 });
 
+                // Add info-window for waypoint
+                var infowindow = new google.maps.InfoWindow({
+                  content: `Name: <b>${waypoint.name}</b><br/>Type: <b>${waypoint.type}</b>`
+                });
+                marker.addListener('mouseover', function() {
+                    infowindow.open(map, marker);
+                });
+                marker.addListener('mouseout', function() {
+                    infowindow.close();
+                });
+
+                // Redundancy for mobile users who can't hover
+                marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+                });
+
                 // Add marker and record position for path
                 marker.setMap(gmap);
                 linePath.push(marker.getPosition());
@@ -50,6 +66,7 @@ Plotter = (function() {
             polyline.setPath(linePath);
             polyline.setMap(gmap);
             gmap.fitBounds(latlngbounds);
+            settings.flightPlanInfoSection.show();
         },
 
         initMap: function() {
@@ -287,7 +304,7 @@ Plotter = (function() {
                         }
                     ]
                 }
-                ]   
+                ]
             });
             if (!(settings.isInitState))
                 this.addFlightPath(settings.map, settings.points);
@@ -297,6 +314,7 @@ Plotter = (function() {
             settings.srcAptBox = $('#src-apt-txt');
             settings.destAptBox = $('#dest-apt-txt');
             settings.simpleRouteBox = $('#simple-route-txt');
+            settings.flightPlanInfoSection = $('#flightplan-info');
             settings.srcAptBox.val(settings.sourceApt);
             settings.destAptBox.val(settings.destinationApt);
             settings.simpleRouteBox.val(settings.simpleRoute);
